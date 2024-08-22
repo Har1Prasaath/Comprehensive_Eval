@@ -1,4 +1,5 @@
 package compeval;
+
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
@@ -117,18 +118,20 @@ public class RadixSort {
     // Main method
     public static void main(String[] args) {
         try {
-            File inputFile = new File("input1000.txt");
+            // Specify the input file
+            File inputFile = new File("inputradixsort.txt");
             Scanner scanner = new Scanner(inputFile);
 
-            int n = scanner.nextInt();
             Node[] headRef = new Node[1]; // Using an array to pass by reference
-
             int memory_usage = (4 * 3); // Initial memory usage for n, value, and headRef
 
-            for (int i = 0; i < n; i++) {
+            int counter = 0; // Counter to ensure only 25 elements are read
+
+            while (scanner.hasNextInt() && counter < 25) {
                 int value = scanner.nextInt();
                 RadixSortLinkedList.insertNode(headRef, value);
                 memory_usage += (4 * 2); // Memory usage for each node (4 bytes for int data, 4 bytes for next pointer)
+                counter++;
             }
 
             scanner.close();
