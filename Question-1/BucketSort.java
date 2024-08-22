@@ -3,7 +3,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
 public class BucketSort {
-	// Function to perform insertion sort on a bucket
+	// Function to perform insertion sort on a bucket.
     public static void insertionSort(float[] bucket, int size, int[] comparisons, int[] basic_operations) {
         for (int i = 1; i < size; ++i) {
             float key = bucket[i];
